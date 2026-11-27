@@ -155,7 +155,7 @@ into place.
 
 ## 📜 License
 
-Free to use and modify. Take whatever is useful to you.
+Released under the [MIT License](LICENSE). Take whatever is useful to you.
 
 ---
 
