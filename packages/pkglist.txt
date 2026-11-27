@@ -32,7 +32,6 @@ calindori
 calligra
 cantor
 cava
-cider
 copyparty
 cups
 cups-browsed
