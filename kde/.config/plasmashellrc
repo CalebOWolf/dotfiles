@@ -1,0 +1,24 @@
+[Applets][1]
+activityId=d534df2a-b0bf-43c2-ae95-097354c2feae
+formfactor=0
+immutability=1
+lastScreen=0
+location=0
+plugin=org.kde.bigscreen.homescreen
+wallpaperplugin=org.kde.slideshow
+
+[Applets][1][Shortcuts]
+global=Meta+F1
+
+[Applets][1][Wallpaper][org.kde.slideshow][General]
+Image=file:///usr/share/wallpapers/FlyingKonqui/
+SlideInterval=480
+SlidePaths=/usr/share/wallpapers/
+
+[PlasmaViews][Panel 2]
+floating=0
+floatingApplets=1
+shell=io.gitgud.wackyideas.desktop
+
+[PlasmaViews][Panel 2][Defaults]
+thickness=40
