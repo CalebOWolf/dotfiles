@@ -1,17 +1,11 @@
-<div align="center">
+# ⚙️ Dotfiles
 
-# ⚙️ dotfiles
+[![OS](https://img.shields.io/badge/Arch%20Linux-202020?style=flat&logo=archlinux&logoColor=646464&label=OS&labelColor=202020)](https://archlinux.org)
+[![Terminal](https://img.shields.io/badge/Ghostty-202020?style=flat&logo=gnometerminal&logoColor=646464&label=Terminal&labelColor=202020)](https://ghostty.org)
+[![Commits](https://img.shields.io/github/commit-activity/t/calebowolf/dotfiles?logo=github&logoColor=646464&label=GitHub%20Commits&labelColor=202020&color=000000)](https://github.com/CalebOWolf/dotfiles/commits/main)
+[![Discord](https://img.shields.io/badge/calebowolf-discord?style=flat&logo=discord&label=Discord&labelColor=000000&color=00ff7f)](https://discord.com/users/202196441593020416)
 
-**My personal configuration files for Arch Linux.**
-
-[![Arch Linux](https://img.shields.io/badge/Arch%20Linux-00ff7f?style=flat&logo=archlinux&logoColor=646464&label=OS&labelColor=000000)](https://archlinux.org)
-[![Ghostty](https://img.shields.io/badge/Ghostty-202020?style=flat&logo=gnometerminal&logoColor=646464&label=Terminal&labelColor=000000)](https://ghostty.org)
-[![btop](https://img.shields.io/badge/btop-202020?style=flat&logo=linux&logoColor=646464&label=Monitor&labelColor=000000)](https://github.com/aristocratos/btop)
-[![Commits](https://img.shields.io/github/commit-activity/t/calebowolf/dotfiles?style=flat&logo=github&logoColor=646464&label=GitHub%20Commits&labelColor=202020&color=000000)](https://github.com/CalebOWolf/dotfiles/commits/main)
-
-</div>
-
----
+> *My personal configuration files for Arch Linux* 🐧
 
 ## 📖 Overview
 
