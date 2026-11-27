@@ -33,6 +33,7 @@ machine and keep my settings in sync across devices.
 | [pacman](https://wiki.archlinux.org/title/Pacman) | Package manager, extra repos, parallel downloads | `/etc/pacman.conf` |
 | [makepkg](https://wiki.archlinux.org/title/Makepkg) | Package build settings | `/etc/makepkg.conf` |
 | [mkinitcpio](https://wiki.archlinux.org/title/Mkinitcpio) | Initramfs hooks | `/etc/mkinitcpio.conf` |
+| [KDE Plasma](https://kde.org/plasma-desktop/) | Aero theme, colors, fonts, panels, shortcuts, KWin effects | `~/.config/` (`kdeglobals`, `kwinrc`, …) |
 | Package lists | Explicitly installed repo and AUR packages | `packages/` |
 
 ## 📂 Structure
@@ -56,6 +57,16 @@ dotfiles/
 │   └── .gitconfig
 ├── hyfetch/
 │   └── .config/hyfetch.json
+├── kde/
+│   └── .config/
+│       ├── kdeglobals
+│       ├── kwinrc
+│       ├── kwinrulesrc
+│       ├── kglobalshortcutsrc
+│       ├── kscreenlockerrc
+│       ├── plasmarc
+│       ├── plasmashellrc
+│       └── plasma-org.kde.plasma.desktop-appletsrc
 ├── arch/
 │   └── etc/
 │       ├── pacman.conf
@@ -103,6 +114,27 @@ sudo pacman -S git stow
    ```
 
 To remove a config's symlinks later, run `stow -D <name>`.
+
+### KDE Plasma
+
+Plasma rewrites its config files all the time, so copy these into place
+instead of symlinking them (otherwise every tweak shows up as a change in the
+repo). Log out of Plasma first, then run:
+
+```bash
+cp kde/.config/* ~/.config/
+```
+
+The Aero theme itself comes from the `aerothemeplasma-*` AUR packages in
+`packages/aurlist.txt`; install those before copying. Wallpapers aren't
+included, so the wallpaper and lock screen settings point at images in
+`~/Pictures/Wallpapers/` that you'll need to supply.
+
+To save your current Plasma setup back into the repo:
+
+```bash
+cp ~/.config/{kdeglobals,kwinrc,kwinrulesrc,kglobalshortcutsrc,kscreenlockerrc,plasmarc,plasmashellrc,plasma-org.kde.plasma.desktop-appletsrc} kde/.config/
+```
 
 ### System configs
 
