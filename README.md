@@ -34,6 +34,7 @@ machine and keep my settings in sync across devices.
 | [makepkg](https://wiki.archlinux.org/title/Makepkg) | Package build settings | `/etc/makepkg.conf` |
 | [mkinitcpio](https://wiki.archlinux.org/title/Mkinitcpio) | Initramfs hooks | `/etc/mkinitcpio.conf` |
 | [KDE Plasma](https://kde.org/plasma-desktop/) | Aero theme, colors, fonts, panels, shortcuts, KWin effects | `~/.config/` (`kdeglobals`, `kwinrc`, …) |
+| Wallpapers | Desktop and lock screen images used by Plasma | `~/Pictures/Wallpapers/` |
 | Package lists | Explicitly installed repo and AUR packages | `packages/` |
 
 ## 📂 Structure
@@ -67,6 +68,8 @@ dotfiles/
 │       ├── plasmarc
 │       ├── plasmashellrc
 │       └── plasma-org.kde.plasma.desktop-appletsrc
+├── wallpapers/
+│   └── Pictures/Wallpapers/
 ├── arch/
 │   └── etc/
 │       ├── pacman.conf
@@ -110,7 +113,7 @@ sudo pacman -S git stow
 3. Symlink the configs you want with Stow:
 
    ```bash
-   stow ghostty sounds btop fish bash git hyfetch
+   stow ghostty sounds btop fish bash git hyfetch wallpapers
    ```
 
 To remove a config's symlinks later, run `stow -D <name>`.
@@ -126,9 +129,8 @@ cp kde/.config/* ~/.config/
 ```
 
 The Aero theme itself comes from the `aerothemeplasma-*` AUR packages in
-`packages/aurlist.txt`; install those before copying. Wallpapers aren't
-included, so the wallpaper and lock screen settings point at images in
-`~/Pictures/Wallpapers/` that you'll need to supply.
+`packages/aurlist.txt`; install those before copying. The desktop and lock
+screen wallpapers come from the `wallpapers` package, so stow it first.
 
 To save your current Plasma setup back into the repo:
 
