@@ -25,11 +25,19 @@ machine and keep my settings in sync across devices.
 | ---- | ----------- | --------------- |
 | [Ghostty](https://ghostty.org) | GPU-accelerated terminal emulator | `~/.config/ghostty/` |
 | [btop](https://github.com/aristocratos/btop) | Resource monitor | `~/.config/btop/` |
-| *More coming soon* | — | — |
+| [fish](https://fishshell.com) | Default interactive shell | `~/.config/fish/` |
+| [Bash](https://www.gnu.org/software/bash/) | Fallback shell | `~/.bashrc` |
+| [Git](https://git-scm.com) | Git identity, LFS and credential helper | `~/.gitconfig` |
+| [hyfetch](https://github.com/hykilpikonna/hyfetch) | Pride-flag system info (fastfetch backend) | `~/.config/hyfetch.json` |
+| [pacman](https://wiki.archlinux.org/title/Pacman) | Package manager, extra repos, parallel downloads | `/etc/pacman.conf` |
+| [makepkg](https://wiki.archlinux.org/title/Makepkg) | Package build settings | `/etc/makepkg.conf` |
+| [mkinitcpio](https://wiki.archlinux.org/title/Mkinitcpio) | Initramfs hooks | `/etc/mkinitcpio.conf` |
+| Package lists | Explicitly installed repo and AUR packages | `packages/` |
 
 ## 📂 Structure
 
-Each tool lives in its own folder that mirrors where its files go in `$HOME`:
+Each tool lives in its own folder that mirrors where its files go in `$HOME`.
+System files live in `arch/`, and package lists in `packages/`:
 
 ```text
 dotfiles/
@@ -37,6 +45,22 @@ dotfiles/
 │   └── .config/ghostty/config.ghostty
 ├── btop/
 │   └── .config/btop/btop.conf
+├── fish/
+│   └── .config/fish/config.fish
+├── bash/
+│   └── .bashrc
+├── git/
+│   └── .gitconfig
+├── hyfetch/
+│   └── .config/hyfetch.json
+├── arch/
+│   └── etc/
+│       ├── pacman.conf
+│       ├── makepkg.conf
+│       └── mkinitcpio.conf
+├── packages/
+│   ├── pkglist.txt
+│   └── aurlist.txt
 └── README.md
 ```
 
@@ -72,10 +96,53 @@ sudo pacman -S git stow
 3. Symlink the configs you want with Stow:
 
    ```bash
-   stow ghostty btop
+   stow ghostty btop fish bash git hyfetch
    ```
 
 To remove a config's symlinks later, run `stow -D <name>`.
+
+### System configs
+
+The files in `arch/etc/` belong in `/etc` and are owned by root, so copy them
+into place instead of symlinking. Compare them with your current files first:
+
+```bash
+diff /etc/pacman.conf arch/etc/pacman.conf
+```
+
+```bash
+sudo cp arch/etc/pacman.conf arch/etc/makepkg.conf arch/etc/mkinitcpio.conf /etc/
+```
+
+After changing `mkinitcpio.conf`, rebuild the initramfs:
+
+```bash
+sudo mkinitcpio -P
+```
+
+### Packages
+
+Reinstall the official repo packages:
+
+```bash
+sudo pacman -S --needed - < packages/pkglist.txt
+```
+
+Reinstall the AUR packages with [paru](https://github.com/Morganamilo/paru):
+
+```bash
+paru -S --needed - < packages/aurlist.txt
+```
+
+To refresh the lists after installing or removing packages:
+
+```bash
+pacman -Qqen > packages/pkglist.txt
+```
+
+```bash
+pacman -Qqem > packages/aurlist.txt
+```
 
 ## 🛠️ Customization
 
