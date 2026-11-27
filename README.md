@@ -4,9 +4,10 @@
 
 **My personal configuration files for Arch Linux.**
 
-[![Arch Linux](https://img.shields.io/badge/Arch%20Linux-1793D1?style=for-the-badge&logo=archlinux&logoColor=white)](https://archlinux.org)
-[![Ghostty](https://img.shields.io/badge/Ghostty-2D2D2D?style=for-the-badge&logo=gnometerminal&logoColor=white)](https://ghostty.org)
-[![btop](https://img.shields.io/badge/btop-4C4C4C?style=for-the-badge&logo=linux&logoColor=white)](https://github.com/aristocratos/btop)
+[![Arch Linux](https://img.shields.io/badge/Arch%20Linux-00ff7f?style=flat&logo=archlinux&logoColor=646464&label=OS&labelColor=000000)](https://archlinux.org)
+[![Ghostty](https://img.shields.io/badge/Ghostty-202020?style=flat&logo=gnometerminal&logoColor=646464&label=Terminal&labelColor=000000)](https://ghostty.org)
+[![btop](https://img.shields.io/badge/btop-202020?style=flat&logo=linux&logoColor=646464&label=Monitor&labelColor=000000)](https://github.com/aristocratos/btop)
+[![Commits](https://img.shields.io/github/commit-activity/t/calebowolf/dotfiles?style=flat&logo=github&logoColor=646464&label=GitHub%20Commits&labelColor=202020&color=000000)](https://github.com/CalebOWolf/dotfiles/commits/main)
 
 </div>
 
