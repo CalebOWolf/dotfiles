@@ -24,6 +24,7 @@ machine and keep my settings in sync across devices.
 | Tool | Description | Config Location |
 | ---- | ----------- | --------------- |
 | [Ghostty](https://ghostty.org) | GPU-accelerated terminal emulator | `~/.config/ghostty/` |
+| Bell sound | Audio played by Ghostty's terminal bell | `~/Documents/Sounds/` |
 | [btop](https://github.com/aristocratos/btop) | Resource monitor | `~/.config/btop/` |
 | [fish](https://fishshell.com) | Default interactive shell | `~/.config/fish/` |
 | [Bash](https://www.gnu.org/software/bash/) | Fallback shell | `~/.bashrc` |
@@ -43,6 +44,8 @@ System files live in `arch/`, and package lists in `packages/`:
 dotfiles/
 ├── ghostty/
 │   └── .config/ghostty/config.ghostty
+├── sounds/
+│   └── Documents/Sounds/outlook.ogg
 ├── btop/
 │   └── .config/btop/btop.conf
 ├── fish/
@@ -96,7 +99,7 @@ sudo pacman -S git stow
 3. Symlink the configs you want with Stow:
 
    ```bash
-   stow ghostty btop fish bash git hyfetch
+   stow ghostty sounds btop fish bash git hyfetch
    ```
 
 To remove a config's symlinks later, run `stow -D <name>`.
