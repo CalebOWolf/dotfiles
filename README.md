@@ -159,10 +159,30 @@ sudo mkinitcpio -P
 
 ### Packages
 
+`pacman.conf` enables the third-party [Fluxer](https://docs.fluxer.com/downloads/linux-repositories/)
+repo, which only accepts packages signed with Fluxer's key. Import and trust
+that key once, before installing anything:
+
+```bash
+sudo pacman-key --init
+```
+
+```bash
+curl -fsSL -o /tmp/fluxer-archive-keyring.asc https://pkgs.fluxer.com/keys/fluxer-archive-keyring.asc
+```
+
+```bash
+sudo pacman-key --add /tmp/fluxer-archive-keyring.asc
+```
+
+```bash
+sudo pacman-key --lsign-key 09D01339EE128925F75E675C855C5BDE34D205D2
+```
+
 Reinstall the official repo packages:
 
 ```bash
-sudo pacman -S --needed - < packages/pkglist.txt
+sudo pacman -Syu --needed - < packages/pkglist.txt
 ```
 
 Reinstall the AUR packages with [paru](https://github.com/Morganamilo/paru):
