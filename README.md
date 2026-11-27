@@ -34,7 +34,7 @@ Each tool lives in its own folder that mirrors where its files go in `$HOME`:
 ```text
 dotfiles/
 ├── ghostty/
-│   └── .config/ghostty/config
+│   └── .config/ghostty/config.ghostty
 ├── btop/
 │   └── .config/btop/btop.conf
 └── README.md
